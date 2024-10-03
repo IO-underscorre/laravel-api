@@ -97,7 +97,7 @@
 
                     @if ($post->img_path)
                         <div>
-                            <img class="w-100" src="{{ asset('storage/' . $post->img_path) }}" alt="{{ $post->title }}">
+                            <img class="w-100" src="{!! asset('storage/' . $post->img_path) !!}" alt="{{ $post->title }}">
                         </div>
                     @else
                         <span class="fs-4">
@@ -112,7 +112,8 @@
                             <i class="fa-solid fa-eye-slash"></i>
                         </a>
 
-                        <a href="{{ route('admin.posts.edit', $post) }}" type="button" class="btn btn-warning">
+                        <a href="{{ route('admin.posts.edit', $post) }}" type="button"
+                           class="btn btn-warning">
                             <i class="fa-solid fa-pen-to-square"></i>
                         </a>
 

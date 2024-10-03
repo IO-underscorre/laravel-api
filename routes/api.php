@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\api\PageController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,6 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::get('/all-posts', [PageController::class, 'getAllPosts']);
+Route::get('/posts-by-tag-slug/{slug}', [PageController::class, 'getPostsByTagSlug']);
+Route::get('/posts-by-type-slug/{slug}', [PageController::class, 'getPostsByTypeSlug']);
+Route::get('/all-tags', [PageController::class, 'getAllTags']);
+Route::get('/all-types', [PageController::class, 'getAllTypes']);
+Route::get('/post-by-slug/{slug}', [PageController::class, 'getPostBySlug']);
